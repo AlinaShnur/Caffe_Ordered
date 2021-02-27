@@ -12,7 +12,7 @@
     <string name="warning_fill_fields">Все поля должны быть заполнены</string>
     <string name="hello_user">Привет, %s! Что будете заказывать?</string>
     <string name="tea">Чай</string>
-    <string name="coffee">Кофе</string>
+    <string name="coffee">хочу кофе</string>
     <string name="additions">Что добавить в ваш %s?</string>
     <string name="sugar">Сахар</string>
     <string name="lemon">Лимон</string>

@@ -26,6 +26,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         }else {
             Intent backToLogin = new Intent(this, LoginActivity.class);
             startActivity(backToLogin);
+            //еще комментов
         }
     }
 }
