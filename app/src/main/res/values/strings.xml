@@ -3,11 +3,11 @@
     <string name="logo_description">Логотип кафе</string>
     <string name="welcome">Добро пожаловать!</string>
 
-    <string name="default_name">Клиент</string>
+    <string name="default_name">Без названия клиент</string>
     <string name="default_password">пароль</string>
 
     <string name="hint_name">Введите ваше имя:</string>
-    <string name="hint_password">Введите ваш пароль:</string>
+    <string name="hint_password">Введите ВАШ пароль:</string>
     <string name="button_create_order">СОЗДАТЬ ЗАКАЗ</string>
     <string name="warning_fill_fields">Все поля должны быть заполнены</string>
     <string name="hello_user">Привет, %s! Что будете заказывать?</string>
