@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightBrown"
+    tools:context=".CreateOrderActivity">
+
+
+
+    <!-- изменить цвет фона в корневом элементе android:background="@color/lightBrown"-->
+
+    <!--RadioButton - выбрать один вариант из предложенных -->
+    <!--CheckBox - выбрать несколько вариантов -->
+    <!--Spinner -  выпадающий список-->
+    <!--Button в виде Image - при клике на картинку действие-->
+
+    <!-- по размеру содержимого-->
+    <!--  1) как будет располагаться по ширине и по длине(по размеру содержимого)-->
+    <!--  2) закреплён верх у верхнего края экрана-->
+    <!--  3) чтобы посередине - левый у левого края-->
+    <!--  4) правый у правого края -->
+    <!-- android:text="П" - добавить текст-->
+    <!-- расположить текст по центру android:gravity="center"-->
+    <!-- отступ сверху android:layout_marginTop="36dp"-->
+    <TextView
+        android:id="@+id/textViewHello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/hello_user"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/darkBrown"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- RadioGrout - контейнер для радиокнопок-->
+    <!-- кнопка будет отвечать на пункт android:text="Чай"-->
+    <!--    для того чтобы кнопки располагались по горизонтали android:orientation="horizontal"-->
+    <!--    верхний край радиогруппы у нижнего края TextView-->
+
+    <!--расположить радиогруппу по центру -->
+    <!--левый край у левого края экрана-->
+    <!--правый край у правого края экрана-->
+    <!--    -->
+    <!--    -->
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/textViewHello"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <RadioButton
+            android:id="@+id/radioButtonTea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/tea"
+            android:checked="true"
+            android:onClick="onClickChangeDrink"
+            android:textColor="@color/white"
+            />
+        <RadioButton
+            android:id="@+id/radioButtonCoffee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/coffee"
+            android:onClick="onClickChangeDrink"
+            android:textColor="@color/white"
+            />
+    </RadioGroup>
+
+    <!-- расположим добавки   -->
+    <!-- должен обращаться верхним краем к нижнему краю RadioButton-->
+    <!-- добавить отступы android:layout_margin="8dp"-->
+    <!-- увеличить шрифт android:textSize="24sp" -->
+    <TextView
+        android:id="@+id/textViewAdditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/additions"
+        android:layout_margin="8dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/darkBrown"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/radioGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!--верхним краем к нижнему краю TextView-->
+    <!--1 левый край у левого края экрана правый у левого края следующего чекбокса -->
+    <!--2 левый с правым краем первого    -->
+    <CheckBox
+        android:id="@+id/checkboxMilk"
+        android:text="@string/milk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAdditions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/checkboxSugar"
+        />
+    <CheckBox
+        android:id="@+id/checkboxSugar"
+        android:text="@string/sugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAdditions"
+        app:layout_constraintStart_toEndOf="@id/checkboxMilk"
+        app:layout_constraintEnd_toStartOf="@id/checkboxLemon"
+        />
+    <CheckBox
+        android:id="@+id/checkboxLemon"
+        android:text="@string/lemon"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAdditions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/checkboxSugar"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+    <!--своим верхним краем должен располагаться к нижнему краю чекбокса-->
+    <!--потому что по вертикали они находятся на одной высоте-->
+
+    <TextView
+        android:id="@+id/textViewHChooseDrink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/choose_drink"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/darkBrown"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/checkboxLemon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <!-- по ширине всю ширину экрана   -->
+    <!-- по высоте по размеру содержимого -->
+    <!--  сделать список видимым android:visibility="visible" -->
+    <!--    -->
+    <Spinner
+        android:id="@+id/spinnerTea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="@color/white"
+        android:entries="@array/options_of_tea"
+        android:visibility="visible"
+        app:layout_constraintTop_toBottomOf="@id/textViewHChooseDrink"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <!-- изначально раскрывающийся список невидимый-->
+    <!--добавление сущности android:entries="@array/options_of_coffe-->
+    <!--    -->
+
+    <Spinner
+        android:id="@+id/spinnerCoffee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textColor="@color/white"
+        android:entries="@array/options_of_coffee"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/textViewHChooseDrink"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <!-- истоник кнопка android:src="@drawable/button"-->
+    <ImageView
+        android:id="@+id/buttonSendOrder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:onClick="onClickSendOrder"
+        android:contentDescription="@string/button_send_description"
+        android:src="@drawable/button"
+        app:layout_constraintTop_toBottomOf="@id/spinnerCoffee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
