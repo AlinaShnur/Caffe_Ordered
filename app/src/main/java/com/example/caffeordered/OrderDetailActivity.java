@@ -23,7 +23,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         if(intent.hasExtra("order")){
             String order = intent.getStringExtra("order");
             textViewOrder.setText(order);
-        }else {
+        }else {//iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
             Intent backToLogin = new Intent(this, LoginActivity.class);
             startActivity(backToLogin);
             //еще комментов
