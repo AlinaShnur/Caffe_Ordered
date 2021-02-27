@@ -16,6 +16,7 @@ public class OrderDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_detail);
         textViewOrder = findViewById(R.id.textViewOrder);
+        //new comment
 
 // получить заказ из предыдущей активности
         Intent intent = getIntent();
